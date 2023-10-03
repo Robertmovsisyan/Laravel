@@ -13,6 +13,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TabController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\RegiController;
+use App\Http\Controllers\FacebookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,3 +92,10 @@ Route::get('/lang',[LangController::class,'lang'])->name('lang');
 
 Route::get('/register',[RegiController::class,'register'])->name('resgister');
 Route::post('/regi' ,[RegiController::class , 'regi'])->name('regi');
+
+
+Route::get('/login',[RegiController::class,'login'])->name('login');
+Route::post('/log' ,[RegiController::class , 'log'])->name('log');
+
+Route::get('auth/facebook',[FacebookController::class,'redirectToFacebook'])->name('auth.facebook');
+Route::get('auth/facebookcallback',[FacebookController::class,'facebookCallback']);
